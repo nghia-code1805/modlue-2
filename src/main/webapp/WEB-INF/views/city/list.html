@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<h1>List City</h1>
+
+<table border="1">
+    <tr>
+        <td>city name</td>
+        <td>nation</td>
+        <td>acreage</td>
+        <td>population</td>
+        <td>GDP</td>
+        <td>description</td>
+        <td>edit</td>
+        <td>delete</td>
+    </tr>
+
+    <th:block th:each="city: ${citys}">
+        <tr>
+        <td th:text="${city.city_name}"></td>
+        <td th:text="${city.quocgia}"></td>
+        <td th:text="${city.dientich}"></td>
+        <td th:text="${city.danso}"></td>
+        <td th:text="${city.gdp}"></td>
+        <td th:text="${city.mota}"></td>
+        <td><a th:href="@{edit-city/__${city.city_id}__}">edit</a></td>
+        <td><a th:href="@{delete-city/__${city.city_id}__}">delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

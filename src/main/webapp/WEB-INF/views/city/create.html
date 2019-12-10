@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th>
+<head>
+    <meta charset="UTF-8">
+    <title>them moi</title>
+</head>
+<body>
+<h1>CREATE</h1>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{create-city}" th:object="${citys}" method="post" >
+    <table>
+        <tr>
+            <td>city name</td>
+            <td><input type="text" th:field="*{city_name}"></td>
+        </tr>
+        <tr>
+            <td>nation</td>
+            <td><input type="text" th:field="*{quocgia}"></td>
+        </tr>
+        <tr>
+            <td>acreage</td>
+            <td><input type="text" th:field="*{dientich}"></td>
+        </tr>
+        <tr>
+            <td>population</td>
+            <td><input type="text" th:field="*{danso}"></td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td><input type="text" th:field="*{gdp}"></td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td><input type="text" th:field="*{mota}"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="create"></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
